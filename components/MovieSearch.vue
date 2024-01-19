@@ -1,6 +1,6 @@
 <script setup>
 
-const query = ref('');
+const query = ref('batman');
 const movies = ref([]);
 const config = useRuntimeConfig();
 
@@ -15,6 +15,7 @@ async function search() {
   });
   movies.value = data.value.Search;
 }
+search();
 </script>
 
 <template>
