@@ -4,8 +4,8 @@
 
   // The error from useFetch will be a 500 server error!
   const { data, error } = await useFetch(
-    // 'http://www.omdbapi.com/', {
-    'https://httpbin.org/status/500', { // mock a 500 error
+    'http://www.omdbapi.com/', {
+    // 'https://httpbin.org/status/500', { // mock a 500 error
     query: {
       apikey: config.public.apiKey,
       i: route.params.id,
@@ -27,7 +27,7 @@
     // specify the keys of the props you want from the data
     // IT IS highly recommended that you only pull the data properties you need 
     // for a given page via pick or transform
-    pick: ["Plot", "Title", "Error"],
+    pick: ["Plot", "Title", "Error", "Poster"],
   });
   
   // handle mocked 500 level server errors from useFetch using httpbin.org
@@ -40,6 +40,20 @@
     // you pass in a code and message.
     showError({ statusCode: 404, statusMessage: "Movie not found" });
   }
+
+  // add SEO with built-in composable useHead
+  useHead({
+    title: data.value.Title,
+    meta: [
+      { name: "description", content: data.value.Plot },
+      // og is open graph and used for all/most social networking sites
+      { name: "og:description", content: data.value.Plot },
+      { name: "og:image", content: data.value.Poster },
+      // tell twitter which kind of image to use
+      { name: "twitter:card", content: "summary_large_image" },
+    ]
+  })
+
 </script>
 
 <template>
