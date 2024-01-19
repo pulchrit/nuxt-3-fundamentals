@@ -13,7 +13,6 @@ async function search() {
       s: query.value,
     }
   });
-  console.log('data', data.value);
   movies.value = data.value.Search;
 }
 </script>
