@@ -13,10 +13,16 @@
 </script>
 <template>
   <div>
-    <nav style="display:flex; gap: 10px">
+    <!-- If your app uses the same layout on each page, it's ok to define it here.
+     Otherwise, you can specify particular layouts in the layouts directory 
+    and then render them via the NuxtLayout component-->
+    <!-- <nav style="display:flex; gap: 10px">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/movies">Movies</NuxtLink>
-    </nav>
-    <NuxtPage />
+    </nav> -->
+    <NuxtLayout>
+      <!-- this is the children that will be passed to the slot in default.vue -->
+      <NuxtPage /> 
+    </NuxtLayout>
   </div>
 </template>
