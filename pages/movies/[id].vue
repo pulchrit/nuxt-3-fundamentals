@@ -3,6 +3,7 @@
   const config = useRuntimeConfig();
 
   const { data } = await useFetch('http://www.omdbapi.com/', {
+    key: `/movies/${route.params.id}`, // add key to ensure data udpates when params.id changes
     query: {
       apikey: config.public.apiKey,
       i: route.params.id,
