@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
   const route = useRoute()
   const config = useRuntimeConfig();
 
@@ -6,7 +6,23 @@
     query: {
       apikey: config.public.apiKey,
       i: route.params.id,
-    }
+    }, 
+    // transform is a callback that allows you to tranform the data before returning it!
+    // transform(data) {
+    //   // example just return title
+    //   // return data.title;
+    //   // example return only plot and title as new object
+    //   return {
+    //     Plot: data.Plot,
+    //     Title: data.Title,
+    //   }
+    // },
+    
+    // NUXT provides a shorthand for just returning a part of the data, pick
+    // specify the keys of the props you want from the data
+    // IT IS highly recommended that you only pull the data properties you need 
+    // for a given page via pick or transform
+    pick: ["Plot", "Title"],
   });
 </script>
 
