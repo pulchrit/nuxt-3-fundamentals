@@ -12,6 +12,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     // or using name
     // return navigateTo({ name: 'login' })
     // or using path
+    // BE SURE TO return the function, don't just call it!!!!!!!
     return navigateTo({ path: 'login' })
   }
 })
