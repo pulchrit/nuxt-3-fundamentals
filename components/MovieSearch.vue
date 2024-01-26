@@ -7,7 +7,7 @@ const config = useRuntimeConfig();
 async function search() {
   // you can use $fetch directly or use the useFetch composable
   // const { Search } = await $fetch(`http://www.omdbapi.com/?apikey=${config.public.apiKey}&s=${query.value}`);
-  const { data } = await useFetch('http://www.omdbapi.com/', {
+  const { data } = await useFetch('https://www.omdbapi.com/', {
     query: {
       apikey: config.public.apiKey,
       s: query.value,

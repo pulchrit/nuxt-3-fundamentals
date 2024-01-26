@@ -4,7 +4,7 @@
 
   // The error from useFetch will be a 500 server error!
   const { data, error } = await useFetch(
-    'http://www.omdbapi.com/', {
+    'https://www.omdbapi.com/', {
     // 'https://httpbin.org/status/500', { // mock a 500 error
     query: {
       apikey: config.public.apiKey,

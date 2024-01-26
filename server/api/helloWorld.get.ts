@@ -11,7 +11,7 @@ export default defineEventHandler((event) => {
     // this returns "GET"
     method: event.method,
     // you can see the content of the query params
-    // when you cann this api endpoint in the browser, you need to add some query 
+    // when you call this api endpoint in the browser, you need to add some query 
     // params: http://localhost:3000/api/helloWorld?hello=world&color=orange
     // this return the JSON object:
     // {
