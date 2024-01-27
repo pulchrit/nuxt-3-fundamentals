@@ -19,7 +19,15 @@ don't have to download the entire large image -->
   will be used for all larger screens, so we might see some poor image quality at 
   larger screen sizes  -->
   <!-- use densities to ensure retina displays get their needed 2x density!! -->
-  <NuxtImg
+  <!-- <NuxtImg
+    src="/mushrooms.jpg"
+    sizes="xs:100vw sm:50vw md:50vw lg:3024px"
+    densities="x1 x2"
+  /> -->
+
+  <!-- using NuxtPicture instead of NuxtImg -->
+  <NuxtPicture
+    format="avif,webp"
     src="/mushrooms.jpg"
     sizes="xs:100vw sm:50vw md:50vw lg:3024px"
     densities="x1 x2"
@@ -27,7 +35,9 @@ don't have to download the entire large image -->
 </template>
 
 <style scoped>
-  img {
+  /* img { */
+  /* use deep(img) to target img inside of picture */
+  :deep(img) {
     display: block;
     max-width: 100%;
   }
