@@ -32,7 +32,22 @@ search();
         <!--  instead of passing a long string /moveis/..., you can 
           pass an object with the name and params of the route  -->
         <NuxtLink :to="{ name: 'movies-id', params: { id: movie.imdbID } }">
-          <img :src="movie.Poster" :alt="movie.title" />
+          <!-- solely specifying width -->
+          <!-- <NuxtImg :src="movie.Poster" :alt="movie.title" width="200" /> -->
+          <!-- using the fit attribute -->
+          <!-- <NuxtImg 
+            :src="movie.Poster"
+            :alt="movie.title"
+            width="200"
+            height="200"
+            fit="contain" /> -->
+          <!-- format prop -->
+          <!-- You can also set format globally in nuxt.config -->
+           <NuxtImg 
+              :src="movie.Poster"
+              :alt="movie.title"
+              width="200"
+              format="webp" /> 
         </NuxtLink>
       </li>
     </ul>
