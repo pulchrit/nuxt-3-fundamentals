@@ -26,12 +26,26 @@ don't have to download the entire large image -->
   /> -->
 
   <!-- using NuxtPicture instead of NuxtImg -->
-  <NuxtPicture
+  <!-- <NuxtPicture
     format="avif,webp"
     src="/mushrooms.jpg"
     sizes="xs:100vw sm:50vw md:50vw lg:3024px"
     densities="x1 x2"
-  />
+  /> -->
+
+  <!-- using native <picture> and <img> elements for art direction, 
+  that is, actually switching to a different image size at different 
+  screen sizes -->
+  <picture>
+    <!-- define media query(ies), when to show this alternate image -->
+    <!-- provide the image file(s) to use at various screen sizes based on the media query(ies) -->
+    <source
+      media="(max-width:640px)"
+      srcset="/mushroom.jpg"
+    />
+    <!-- provide <img> as the fallback or to be used in cases that aren't covered by the media query(ies) -->
+    <img src="/mushrooms.jpg" alt="" />
+  </picture>
 </template>
 
 <style scoped>
