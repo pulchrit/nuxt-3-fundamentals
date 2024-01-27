@@ -30,12 +30,14 @@ search();
     <ul class="movie-list">
       <li v-for="movie in movies" :key="movie.imbdID">
         <!-- adding the movie info as a pre tag just for speed -->
-        <pre style="font-size: 20px">{{  movie }}</pre>
+        <!-- <pre style="font-size: 20px">{{  movie }}</pre> -->
+
         <!--  instead of passing a long string /moveis/..., you can 
           pass an object with the name and params of the route  -->
         <NuxtLink :to="{ name: 'movies-id', params: { id: movie.imdbID } }">
           <!-- solely specifying width -->
           <!-- <NuxtImg :src="movie.Poster" :alt="movie.title" width="200" /> -->
+         
           <!-- using the fit attribute -->
           <!-- <NuxtImg 
             :src="movie.Poster"
@@ -43,7 +45,8 @@ search();
             width="200"
             height="200"
             fit="contain" /> -->
-          <!-- format prop -->
+         
+            <!-- format prop -->
           <!-- You can also set format globally in nuxt.config -->
            <NuxtImg 
               :src="movie.Poster"
@@ -52,6 +55,7 @@ search();
               format="webp" 
               loading="lazy"
             /> 
+            
             <!-- use preload attribute if you want to be sure an image is loaded and ready for use -->
             <!-- <NuxtImg 
               :src="movie.Poster"

@@ -23,6 +23,16 @@ export default defineNuxtConfig({
     // if your images are not coming from your own public folder, you need to 
     // specify where they are coming from her in domains
     domains: ['m.media-amazon.com'],
+    // The screen sizes predefined by `@nuxt/image`:
+    // YOU DON'T NEED to define them here!!! Only if you want to change them.
+    // screens: {
+    //   'xs': 320,
+    //   'sm': 640,
+    //   'md': 768,
+    //   'lg': 1024,
+    //   'xl': 1280,
+    //   'xxl': 1536,
+    //   '2xl': 1536
   },
   // Add your own auto-import directories!
   imports: {
