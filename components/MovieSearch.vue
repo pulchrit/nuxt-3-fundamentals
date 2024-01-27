@@ -29,6 +29,8 @@ search();
     </form>
     <ul class="movie-list">
       <li v-for="movie in movies" :key="movie.imbdID">
+        <!-- adding the movie info as a pre tag just for speed -->
+        <pre style="font-size: 20px">{{  movie }}</pre>
         <!--  instead of passing a long string /moveis/..., you can 
           pass an object with the name and params of the route  -->
         <NuxtLink :to="{ name: 'movies-id', params: { id: movie.imdbID } }">
@@ -47,7 +49,17 @@ search();
               :src="movie.Poster"
               :alt="movie.title"
               width="200"
-              format="webp" /> 
+              format="webp" 
+              loading="lazy"
+            /> 
+            <!-- use preload attribute if you want to be sure an image is loaded and ready for use -->
+            <!-- <NuxtImg 
+              :src="movie.Poster"
+              :alt="movie.title"
+              width="200"
+              format="webp" 
+              preload
+            />  -->
         </NuxtLink>
       </li>
     </ul>
